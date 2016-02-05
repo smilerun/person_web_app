@@ -1,0 +1,119 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	font-size: .80em;
+	font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+	margin: auto;
+	color: #696969;
+	background: #EEE8AA;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 1.5em;
+	color: #666666;
+	font-variant: small-caps;
+	text-transform: none;
+	font-weight: 200;
+	margin-bottom: 0px;
+}
+
+h1 {
+	font-size: 2.5em;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+h2 {
+	font-size: 1.5em;
+	font-weight: 600;
+}
+
+h3 {
+	font-size: 1.2em;
+}
+
+h4 {
+	font-size: 1.1em;
+}
+
+h5,h6 {
+	font-size: 1em;
+}
+
+.mainContent {
+	margin-left: 50px;
+	margin-top: 20px;
+	padding-left: 10px;
+	padding-top: 20px;
+}
+
+tr.formRow {
+	padding:10px;
+	margin: 10px;
+}
+
+.dobTextfield {
+	width: 150px;
+	height: 25px;
+}
+
+.textfield {
+	width: 250px;
+	height: 25px;
+}
+
+.stateTextfield {
+	width: 100px;
+	height: 25px;
+}
+
+.userTableHead {
+	background-color: #1d548b; 
+	color: white; 
+	text-align: center;
+	height : 45px;
+}
+
+.userListTable {
+	border-collapse: collapse;
+	cellpadding: 10px;
+	border: 3px solid #1d548b;	
+}
+
+td.width100LB {
+  width: 100px;
+  border-left: 1px solid #1d548b;
+  border-bottom: 1px solid #1d548b;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+td.width50LB {
+  width: 50px;
+  border-left: 1px solid #1d548b;
+  border-bottom: 1px solid #1d548b;
+  padding-top: 5px;
+  padding-bottom: 5px;	
+}
+
+td.adjacentLB {
+  border-left: 1px solid #1d548b;
+  border-bottom: 1px solid #1d548b;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+td.adjacentLRB {
+  border-left: 1px solid #1d548b;
+  border-right: 1px solid #1d548b;
+  border-bottom: 1px solid #1d548b;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+tr.userInfoRow {
+	text-align: center;
+}
+
