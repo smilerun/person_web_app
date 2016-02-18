@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -23,6 +24,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 import static com.bnaqica.person.util.ObjectMapperProvider.getObjectMapper;
+import static java.text.MessageFormat.format;
 
 @Controller
 public class PersonAPIController {
@@ -63,5 +65,18 @@ public class PersonAPIController {
 		response.setStatus(HttpServletResponse.SC_CREATED);
 		return "Open/Created";
 	}
+	
+	@RequestMapping(value = "/person/{personId}", produces = APPLICATION_JSON_VALUE)
+	public @ResponseBody Object getPerson(@PathVariable int personId, HttpServletResponse response) throws IOException  {
+        Person person = personDAO.retrievePerson(personId);
 
+        if (person.equals(null)) {
+            logger.warn("request for person.  personId={}", personId);
+            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            return format("Order with id {0} could not be found.", personId);
+        } else {
+            response.setStatus(HttpServletResponse.SC_OK);
+            return jsonMapper.writeValueAsString(person);
+        }
+	}
 }
